@@ -3,5 +3,5 @@ from fastapi import FastAPI
 app = FastAPI()
 
 @app.get("/")
-def root()
-return "Fuhh you"
+def root():
+    return "Fuhh you"
