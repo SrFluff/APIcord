@@ -1,12 +1,8 @@
 from fastapi import FastAPI
-from fastapi.responses import FileResponse
+from fastapi.responses import HTMLResponse, FileResponse
 
 app = FastAPI()
 
-@app.get("/")
+@app.get("/",response_class=FileResponse)
 def root():
-    return "Fuhh you"
-
-@app.get("/image")
-def root():
-    return FileResponse("image.png",media_type="image/png")
+    return FileResponse("kitty.gif")
