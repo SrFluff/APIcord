@@ -3,6 +3,6 @@ from fastapi.responses import HTMLResponse, FileResponse
 
 app = FastAPI()
 
-@app.get("/",response_class=FileResponse)
-def root():
-    return FileResponse("kitty.gif")
+@app.get("/meme/{guh}",response_class=FileResponse)
+def root(guh: str):
+    return FileResponse(guh)
