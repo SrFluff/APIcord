@@ -7,6 +7,6 @@ app = FastAPI()
 @app.get("/memes/{guh}",response_class=FileResponse)
 def root(guh: str):
     if os.path.exists("memes/" + guh):
-        return FileResponse(guh)
+        return FileResponse("memes/" + guh)
     else:
         return "Fuck you"
