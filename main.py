@@ -14,6 +14,7 @@ def root(guh: str):
     else:
         return "Fuck you"
 
-@app.get("/")
+@app.get("/",response_class=FileResponse)
 def root():
-    return fuck
+    shit = random.randint(0,fuck-1)
+    return FileResponse("memes/" + os.listdir()[shit])
